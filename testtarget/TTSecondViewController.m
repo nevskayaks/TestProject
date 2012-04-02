@@ -9,10 +9,13 @@
 #import "TTSecondViewController.h"
 
 @interface TTSecondViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @end
 
 @implementation TTSecondViewController
+@synthesize textLabel;
+@synthesize changeButton;
 
 - (void)viewDidLoad
 {
@@ -22,6 +25,8 @@
 
 - (void)viewDidUnload
 {
+    [self setChangeButton:nil];
+    [self setTextLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -31,4 +36,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)changeAction:(UIButton *)sender {
+    textLabel.text = @"Here we go!";
+}
 @end

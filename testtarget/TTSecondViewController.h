@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TTSecondViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *changeButton;
+- (IBAction)changeAction:(UIButton *)sender;
 
 @end
